@@ -100,6 +100,7 @@ _Screenshots of the Bargheto app will be added here soon._
 | OTP | <img src="./screenshots/otp.jpg" alt="otp" width="300"/> |
 | Drawer | <img src="./screenshots/drawer.jpg" alt="drawer" width="300"/> |
 | Credit | <img src="./screenshots/credit.jpg" alt="credit" width="300"/> |
+| User | <img src="./screenshots/user.jpg" alt="user" width="300"/> |
 | Accounting | <img src="./screenshots/accounting.jpg" alt="accounting" width="300"/> |
 | Bills | <img src="./screenshots/bills.jpg" alt="bills" width="300"/> |
 | Add Contract | <img src="./screenshots/add-contract.jpg" alt="add-contract" width="300"/> |
@@ -112,5 +113,3 @@ _Screenshots of the Bargheto app will be added here soon._
 _This repository is for portfolio and presentation purposes only. The app’s source code is not publicly available._
 
 ---
-
-**Note:** Screenshots and non-sensitive assets will be added for demonstration only.
