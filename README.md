@@ -9,7 +9,7 @@ This repository showcases my work as a **Flutter developer** on the Bargheto pro
 
 Bargheto enables online purchase of industrial electricity, flexible payment terms, and bilateral contracts. It simplifies electricity procurement for industries, organizations, and energy investors through a fully digital process.
 
-### 📌 Key Highlights
+## 📌 Key Highlights
 
 - Industrial electricity procurement with flexible contracts
 - Clean and maintainable Flutter codebase
