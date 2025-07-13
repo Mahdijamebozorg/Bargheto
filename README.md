@@ -1,4 +1,4 @@
-# Bargheto App
+# Bargheto
 
 **Bargheto** is a smart, digital platform for industrial electricity procurement in Iran.  
 This repository showcases my work as a **Flutter developer** on the Bargheto project.
