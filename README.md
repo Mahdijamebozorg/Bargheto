@@ -6,7 +6,7 @@ This repository showcases my work as a **Flutter developer** on the Bargheto pro
 - [WebSite](https://bargheto.com/download-app)
 - [Cafe Bazaar](https://cafebazaar.ir/app/com.bargheto.client)
 - [Myket](https://myket.ir/app/com.bargheto.client)
-- [IOS](https://bargheto.com) (Soon)
+- [IOS](https://bargheto.com/download-app/) (Soon)
 - [PWA](https://mahdijamebozorg.github.io/bargheto)
 - [Google Play](https://play.google.com/store/apps/details?id=com.bargheto.client) (Soon)
 
