@@ -5,7 +5,7 @@ downloads:
 - [Myket](https://myket.ir/app/com.bargheto.client)
 - [IOS](https://bargheto.com) (Soon)
 - [PWA](https://mahdijamebozorg.github.io/bargheto)
-- [Google Play](https://play.google.com/store/apps/details?id=com.bargheto.client)
+- [Google Play](https://play.google.com/store/apps/details?id=com.bargheto.client) (Soon)
 
 **Bargheto** is a smart, digital platform for industrial electricity procurement in Iran.  
 This repository showcases my work as a **Flutter developer** on the Bargheto project.
