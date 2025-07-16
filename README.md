@@ -4,7 +4,7 @@ downloads:
 - [Cafe Bazaar](https://cafebazaar.ir/app/com.bargheto.client)
 - [Myket](https://myket.ir/app/com.bargheto.client)
 - [IOS](https://bargheto.com) (Soon)
-- [PWA](mahdijamebozorg.github.io/bargheto)
+- [PWA](https://mahdijamebozorg.github.io/bargheto)
 - [Google Play](https://play.google.com/store/apps/details?id=com.bargheto.client)
 
 **Bargheto** is a smart, digital platform for industrial electricity procurement in Iran.  
