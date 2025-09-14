@@ -98,8 +98,6 @@ lib/
 
 ## 📸 Screenshots
 
-_Screenshots of the Bargheto app will be added here soon._
-
 | Screen | Screenshot |
 | ------ | ----------- |
 | Login | <img src="./screenshots/login.jpg" alt="login" width="300"/> |
