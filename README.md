@@ -76,3 +76,32 @@ lib/
  │    ├── PowerSupply         # Real-time hardware node monitoring
  │    ├── Statistics          # Highly optimized fl_chart implementations
  │    └── Tickets             # B2B enterprise real-time support pipelines
+
+```
+---
+
+## 📸 Screenshots
+
+| Screen | Screenshot |
+| ------ | ----------- |
+| Login | <img src="./screenshots/login.jpg" alt="login" width="300"/> |
+| Dashboard | <img src="./screenshots/dashboard.jpg" alt="dashboard" width="300"/> |
+| OTP | <img src="./screenshots/otp.jpg" alt="otp" width="300"/> |
+| Drawer | <img src="./screenshots/drawer.jpg" alt="drawer" width="300"/> |
+| Credit | <img src="./screenshots/credit.jpg" alt="credit" width="300"/> |
+| User | <img src="./screenshots/user.jpg" alt="user" width="300"/> |
+| Accounting | <img src="./screenshots/accounting.jpg" alt="accounting" width="300"/> |
+| Bills | <img src="./screenshots/bills.jpg" alt="bills" width="300"/> |
+| Add Contract | <img src="./screenshots/add-contract.jpg" alt="add-contract" width="300"/> |
+| Contracts | <img src="./screenshots/contracts.jpg" alt="contracts" width="300"/> |
+| Contract Details | <img src="./screenshots/contract-details.jpg" alt="contract-details" width="300"/> |
+| Ticketing | <img src="./screenshots/ticket-details.jpg" alt="ticket-details" width="300"/> |
+
+--- 
+
+## 📄 License
+
+This repository is for portfolio and presentation purposes only. The app’s source code is not publicly available._
+
+--- 
+
