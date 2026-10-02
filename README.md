@@ -1,10 +1,13 @@
 # Bargheto (برقتو)
 
 [![Flutter](https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
-[![Architecture](https://img.shields.io/badge/Architecture-Clean%20%2B%20Feature--First-blue)](#-architecture--project-structure)
-[![Status](https://img.shields.io/badge/Status-Production--Ready-success)](#)
+[![Architecture](https://img.shields.io/badge/Architecture-Clean%20%2B%20Feature--First-blue)](#%EF%B8%8F-architecture--project-structure)
+[![Status](https://img.shields.io/badge/Status-In%20Production-success)](#-production-links)
+[![Users](https://img.shields.io/badge/Users-50%2C000%2B-orange)](#-about-the-platform)
 
-**Bargheto** is the first and largest private digital platform for industrial electricity procurement and energy management in Iran. This repository showcases my engineering layout, architectural patterns, and production-grade implementations as the **Lead Mobile Software Engineer & Architect** on the project.
+**Bargheto** is a leading digital platform for industrial electricity procurement and energy management in Iran, used by **50,000+ users** across Android, iOS and the web.
+
+This repository presents the architecture and engineering approach behind the Flutter client, which I designed and led as **Head Mobile Engineer** (Nov 2024 – Aug 2026). The source code is private; this is a portfolio overview.
 
 ---
 
@@ -19,65 +22,71 @@
 
 ## 📱 About the Platform
 
-Bargheto digitizes highly complex electricity procurement workflows for large industries, state organizations, and green energy investors. The application facilitates flexible corporate utility billing, bilateral electrical contracts, real-time consumption monitoring, and legal energy transactions within a highly secured financial framework.
+Bargheto digitizes electricity procurement for large industrial consumers, organizations and green energy investors: utility billing, bilateral electricity contracts, consumption monitoring and energy transactions, all within a regulated financial framework.
+
+One Flutter codebase ships to **Android, iOS and PWA**.
 
 ---
 
-## 👨‍💻 Key Software Engineering Challenges & Solutions
+## 👨‍💻 Engineering Challenges & Solutions
 
-Navigating this large-scale industrial utility system required overcoming critical software design constraints:
+**Constantly changing business rules.**
+Energy market regulations and payment terms change often.
+*Solution:* Clean Architecture (data, domain, presentation) with independent feature modules, so business logic changes stay isolated from the UI and regressions stay contained.
 
-*   **Volatile Business Rules & Domain Requirements:** The deregulated energy industry presented continuous changes in regulatory laws and payment terms. 
-    *   *Solution:* Enforced strict **Clean Architecture (Data, Domain, Presentation layers)** combined with independent feature modules to isolate business logic from UI changes, achieving zero-regression deployments.
-*   **Platform-Specific & Native Constraints:** Certain high-security enterprise integrations and web-context handling required moving past standard cross-platform APIs.
-    *   *Solution:* Engineered tailored platform channels and custom **Native Bridges (Kotlin for Android / Swift for iOS)** to build a unified, deterministic hardware API layer.
-*   **Environment Orchestration & Multi-Tenant Deployment:** Managing separate builds for engineering sprints, integration testing, and final live release cycles.
-    *   *Solution:* Designed automated **multi-flavor CI/CD configurations (Dev, Test, Production)**, ensuring rigid isolation of endpoints, cryptographic keys, and automated testing variables.
-*   **End-to-End Technical Lifecycle Ownership:** Taking the application from raw requirement gathering and system design up to continuous market distribution.
-    *   *Solution:* Translated abstract enterprise business criteria into scalable data schemas, managed complex package lifetimes, and streamlined production deployments.
-*   **Production Telemetry & User Observability:** Tracking real-time runtime exceptions, structural layout behaviors, and UI performance blockages without compromising user privacy.
-    *   *Solution:* Integrated **Microsoft Clarity** along with analytical logging streams to actively monitor session replays, isolate client-side friction, and drive data-backed performance patches.
+**Going beyond cross-platform APIs.**
+Some integrations and web-context handling weren't possible with standard Flutter plugins.
+*Solution:* Custom platform channels and native code in **Kotlin (Android)** and **Swift (iOS)** behind a single Dart API.
+
+**Separate environments for development, testing and release.**
+*Solution:* Build flavors per environment with isolated endpoints and keys, plus an automated CI/CD pipeline for build, test and release.
+
+**End-to-end ownership.**
+Took the app from requirements and system design to release on app stores and the web, and ongoing iteration based on user feedback.
+
+**Production observability.**
+*Solution:* **Microsoft Clarity** session replays and structured logging to find UX friction and client-side errors, and prioritize fixes with real usage data.
 
 ---
 
-## 🛠️ Deep-Dive Tech Stack & Dependency Layout
+## 🛠️ Tech Stack
 
-| Category | Technical Packages & Frameworks | Architectural Purpose |
+| Category | Packages | Purpose |
 | :--- | :--- | :--- |
-| **State Management** | `GetX`, `equatable` | Micro-state isolation, reactive data streams, dynamic memory management |
-| **Networking & HTTP** | `Dio`, `pretty_dio_logger` | Advanced interceptors, global exception routing, automated retry layers |
-| **Storage & Caching** | `shared_preferences` | Decentralized lightweight offline caching of key transaction parameters |
-| **Security & Auth** | `local_auth`, `smart_auth`, `pinput` | Secure biometric authentication, automated SMS-OTP handshake layers |
-| **Native Web Context**| `flutter_inappwebview`, `universal_html`, `pointer_interceptor` | Resilient sandbox execution of web modules across PWA and mobile viewports |
-| **Telemetry & Scan** | `mobile_scanner`, `logger` | Hardware-optimized QR processing, systematic environmental debugging |
-| **Analytics & UI** | `fl_chart`, `skeletonizer`, `lottie` | High-fidelity financial charts, asset visualization, non-blocking skeleton loaders |
-| **Localization & L10n**| `flutter_localization`, `intl`, `shamsi_date`, `persian_number_utility` | Strict RTL structural rendering, Jalali/Shamsi calendar integrations |
+| **State Management** | `GetX`, `equatable` | Reactive state and dependency management |
+| **Networking** | `Dio`, `pretty_dio_logger` | Interceptors, centralized error handling, request logging |
+| **Storage** | `shared_preferences` | Lightweight local persistence |
+| **Security & Auth** | `local_auth`, `smart_auth`, `pinput` | Biometric login and SMS OTP auto-fill |
+| **Web Content** | `flutter_inappwebview`, `universal_html`, `pointer_interceptor` | Embedded web modules across mobile and PWA |
+| **Scanning & Logging** | `mobile_scanner`, `logger` | QR scanning and structured debug logging |
+| **Charts & UI** | `fl_chart`, `skeletonizer`, `lottie` | Financial and consumption charts, skeleton loaders, animations |
+| **Localization** | `flutter_localization`, `intl`, `shamsi_date`, `persian_number_utility` | Full RTL support and Jalali (Shamsi) calendar |
 
 ---
 
 ## 🗂️ Architecture & Project Structure
 
-The codebase is organized using a **Feature-First + Layered Clean Architecture** approach. This strict separation of concerns isolates external frameworks, keeps the domain layer highly testable, and prevents feature tightly-coupling.
+The codebase follows a **feature-first, layered Clean Architecture**: framework details stay at the edges, the domain layer stays testable, and features stay decoupled from each other.
 
 ```text
 lib/
- ├── core/                    # Application-wide global infrastructures
- │    ├── components/         # Atomic, reusable agnostic UI widgets
- │    ├── routes/             # Strongly-typed named route definitions
- │    ├── services/           # Persistent background services (Auth, Storage, API)
- │    ├── theme/              # Centralized tokenized UI theme matrices
- │    └── utils/              # Pure functional extensions & helpers
+ ├── core/                    # App-wide infrastructure
+ │    ├── components/         # Reusable UI widgets
+ │    ├── routes/             # Named route definitions
+ │    ├── services/           # Auth, storage and API services
+ │    ├── theme/              # Centralized design tokens and themes
+ │    └── utils/              # Extensions and helpers
  │
- ├── features/                # Domain-driven decoupled modules
- │    ├── Splash / Onboarding # Application boot-up lifecycle routines
- │    ├── Authentication      # Secured access control pipelines
- │    ├── Accounting / Bill   # High-concurrency utility billing & ledgers
- │    ├── Contract / Invoice  # Bilateral industrial contract configurations
- │    ├── PowerSupply         # Real-time hardware node monitoring
- │    ├── Statistics          # Highly optimized fl_chart implementations
- │    └── Tickets             # B2B enterprise real-time support pipelines
-
+ ├── features/                # Independent feature modules
+ │    ├── Splash / Onboarding # App startup
+ │    ├── Authentication      # Login, OTP and biometrics
+ │    ├── Accounting / Bill   # Billing and account ledgers
+ │    ├── Contract / Invoice  # Bilateral electricity contracts
+ │    ├── PowerSupply         # Power supply and consumption monitoring
+ │    ├── Statistics          # Consumption and financial charts
+ │    └── Tickets             # Customer support tickets
 ```
+
 ---
 
 ## 📸 Screenshots
@@ -97,11 +106,8 @@ lib/
 | Contract Details | <img src="./screenshots/contract-details.jpg" alt="contract-details" width="300"/> |
 | Ticketing | <img src="./screenshots/ticket-details.jpg" alt="ticket-details" width="300"/> |
 
---- 
+---
 
 ## 📄 License
 
-This repository is for portfolio and presentation purposes only. The app’s source code is not publicly available._
-
---- 
-
+This repository is for portfolio and presentation purposes only. The app's source code is not publicly available.
